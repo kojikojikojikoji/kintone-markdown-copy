@@ -77,11 +77,13 @@ function renderSubtableDetail(
   }
 
   if (format === "tsv") {
-    const header = inners.map((m) => m.label).join("\t");
+    // Labels are app-defined text and can carry tabs or newlines; give them
+    // the same escaping as values or the grid shape breaks.
+    const header = inners.map((m) => escapeTsvCell(m.label)).join("\t");
     const dataRows = rows.map((r) =>
       inners.map((m) => escapeTsvCell(subCell(r, m, opts))).join("\t"),
     );
-    return [meta.label, header, ...dataRows].join("\n");
+    return [escapeTsvCell(meta.label), header, ...dataRows].join("\n");
   }
 
   // Markdown table.
@@ -113,7 +115,7 @@ export function generateDetail(
       .join("\n");
   } else if (format === "tsv") {
     body = bodyCols
-      .map((c) => `${c.label}\t${escapeTsvCell(cellText(record, c, opts))}`)
+      .map((c) => `${escapeTsvCell(c.label)}\t${escapeTsvCell(cellText(record, c, opts))}`)
       .join("\n");
   } else {
     const header = tableRow(["フィールド", "値"]);
@@ -154,7 +156,7 @@ export function generateIndex(
       })
       .join("\n");
   } else if (format === "tsv") {
-    const header = labels.join("\t");
+    const header = labels.map((l) => escapeTsvCell(l)).join("\t");
     const rows = records.map((rec) =>
       columns.map((c) => escapeTsvCell(cellText(rec, c, opts))).join("\t"),
     );

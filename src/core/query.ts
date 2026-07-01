@@ -14,7 +14,10 @@ export function stripLimitOffset(query: string): string {
 // order (FR-12 / EC-21).
 export function buildFetchQuery(rawQuery: string): string {
   const base = stripLimitOffset(rawQuery).trim();
-  if (/order by/i.test(base)) {
+  // Look for a sort clause outside quoted literals; a filter value such as
+  // memo like "order by" must not suppress the stable-order fallback.
+  const withoutLiterals = base.replace(/"(?:[^"\\]|\\.)*"/g, '""');
+  if (/\border by\b/i.test(withoutLiterals)) {
     return base;
   }
   return base ? `${base} order by $id asc` : "order by $id asc";

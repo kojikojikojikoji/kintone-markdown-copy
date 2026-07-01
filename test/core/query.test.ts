@@ -26,4 +26,10 @@ describe("query", () => {
     expect(buildFetchQuery("")).toBe("order by $id asc");
     expect(buildFetchQuery("limit 500 offset 0")).toBe("order by $id asc");
   });
+
+  it("ignores order by inside a quoted literal", () => {
+    expect(buildFetchQuery(String.raw`memo like "order by"`)).toBe(
+      String.raw`memo like "order by" order by $id asc`,
+    );
+  });
 });
