@@ -1,0 +1,38 @@
+{
+  "name": "kintone-markdown-copy",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Koji Miyazawa",
+  "description": "Copy kintone records and list views to the clipboard as Markdown or TSV.",
+  "type": "module",
+  "scripts": {
+    "dev": "ENTRY=desktop vite build --watch",
+    "build": "ENTRY=desktop vite build && ENTRY=mobile vite build && ENTRY=config vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "pack": "npm run build && node scripts/pack.mjs",
+    "icon": "node scripts/gen-icon.mjs"
+  },
+  "dependencies": {
+    "@kintone/rest-api-client": "^5.7.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cybozu/eslint-config": "^24.0.0",
+    "@kintone/dts-gen": "^8.1.0",
+    "@kintone/plugin-packer": "^8.1.0",
+    "@playwright/test": "^1.45.0",
+    "@types/node": "^20.19.43",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "eslint": "^8.57.0",
+    "jsdom": "^24.1.0",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.3",
+    "vitest": "^2.0.2"
+  }
+}
