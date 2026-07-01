@@ -1,0 +1,187 @@
+/* Config screen layout (common spec section 7). */
+
+#kp-mdcopy-config-root {
+  font-family: var(--kp-font);
+  color: var(--kp-text);
+  max-width: 800px;
+  margin: 0;
+  padding: 24px 16px 96px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.kp-mdcopy-h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.kp-mdcopy-lead {
+  color: var(--kp-text-sub);
+  margin: 0 0 24px;
+}
+
+.kp-mdcopy-card {
+  background: var(--kp-bg);
+  border: 1px solid var(--kp-border);
+  border-radius: var(--kp-radius);
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.kp-mdcopy-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.kp-mdcopy-field {
+  margin-bottom: 16px;
+}
+
+.kp-mdcopy-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.kp-mdcopy-desc {
+  font-size: 12px;
+  color: var(--kp-text-sub);
+  margin: 4px 0 0;
+}
+
+.kp-mdcopy-input,
+.kp-mdcopy-number {
+  font: inherit;
+  padding: 6px 8px;
+  border: 1px solid var(--kp-border);
+  border-radius: var(--kp-radius);
+  box-sizing: border-box;
+}
+
+.kp-mdcopy-input {
+  width: 320px;
+  max-width: 100%;
+}
+
+.kp-mdcopy-number {
+  width: 120px;
+}
+
+.kp-mdcopy-input:focus,
+.kp-mdcopy-number:focus,
+.kp-mdcopy-config-select:focus,
+.kp-mdcopy-cfg-btn:focus {
+  outline: 2px solid var(--kp-focus);
+  outline-offset: 2px;
+}
+
+.kp-mdcopy-radio-group label {
+  margin-right: 16px;
+  font-weight: 400;
+}
+
+.kp-mdcopy-error {
+  color: var(--kp-danger);
+  font-size: 12px;
+  margin: 4px 0 0;
+}
+
+.kp-mdcopy-profile-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--kp-border);
+}
+
+.kp-mdcopy-profile-name {
+  flex: 1;
+  font-weight: 600;
+}
+
+.kp-mdcopy-cfg-btn {
+  font: inherit;
+  padding: 6px 12px;
+  border-radius: var(--kp-radius);
+  border: 1px solid var(--kp-border);
+  background: var(--kp-bg);
+  color: var(--kp-text);
+  cursor: pointer;
+}
+
+.kp-mdcopy-cfg-btn:hover {
+  background: var(--kp-bg-section);
+}
+
+.kp-mdcopy-cfg-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.kp-mdcopy-cfg-btn--danger {
+  border-color: var(--kp-danger);
+  color: var(--kp-danger);
+}
+
+.kp-mdcopy-edit {
+  background: var(--kp-bg-section);
+  border-radius: var(--kp-radius);
+  padding: 16px;
+  margin-top: 12px;
+}
+
+.kp-mdcopy-fieldpicker {
+  display: flex;
+  gap: 16px;
+}
+
+.kp-mdcopy-fieldpicker select {
+  min-width: 220px;
+  min-height: 160px;
+  font: inherit;
+}
+
+.kp-mdcopy-fieldpicker-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+}
+
+.kp-mdcopy-savebar {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--kp-bg);
+  border-top: 1px solid var(--kp-border);
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.kp-mdcopy-save {
+  font: inherit;
+  padding: 8px 20px;
+  border: none;
+  border-radius: var(--kp-radius);
+  background: var(--kp-primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+.kp-mdcopy-save:hover {
+  background: var(--kp-primary-hover);
+}
+
+.kp-mdcopy-cancel {
+  font: inherit;
+  background: none;
+  border: none;
+  color: var(--kp-primary);
+  cursor: pointer;
+}

@@ -1,0 +1,142 @@
+/* Record-screen UI: copy button, dropdown menu, toasts.
+   Prefixed kp-mdcopy- to avoid clashing with kintone or sibling plugins. */
+
+.kp-mdcopy-button {
+  position: relative;
+  height: 48px;
+  padding: 0 32px 0 12px;
+  font-family: var(--kp-font);
+  font-size: 14px;
+  color: var(--kp-text);
+  background: var(--kp-bg);
+  border: 1px solid var(--kp-border);
+  border-radius: var(--kp-radius);
+  cursor: pointer;
+}
+
+.kp-mdcopy-button--mobile {
+  height: 40px;
+}
+
+.kp-mdcopy-button::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  margin-top: -2px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--kp-text-sub);
+}
+
+.kp-mdcopy-button:hover {
+  background: var(--kp-bg-section);
+}
+
+.kp-mdcopy-button:focus {
+  outline: 2px solid var(--kp-focus);
+  outline-offset: 2px;
+}
+
+.kp-mdcopy-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.kp-mdcopy-menu {
+  position: absolute;
+  z-index: 10000;
+  width: 240px;
+  margin-top: 4px;
+  background: var(--kp-bg);
+  border: 1px solid var(--kp-border);
+  border-radius: var(--kp-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 4px 0;
+  font-family: var(--kp-font);
+}
+
+.kp-mdcopy-profile-row {
+  padding: 8px 12px;
+}
+
+.kp-mdcopy-profile-label {
+  display: block;
+  font-size: 12px;
+  color: var(--kp-text-sub);
+}
+
+.kp-mdcopy-profile-select {
+  width: 100%;
+  margin-top: 4px;
+  font: inherit;
+  padding: 4px;
+}
+
+.kp-mdcopy-divider {
+  height: 1px;
+  background: var(--kp-border);
+  margin: 4px 0;
+}
+
+.kp-mdcopy-item {
+  display: block;
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  text-align: left;
+  font-size: 14px;
+  color: var(--kp-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.kp-mdcopy-item:hover:not(:disabled),
+.kp-mdcopy-item:focus:not(:disabled) {
+  background: var(--kp-bg-section);
+  outline: none;
+}
+
+.kp-mdcopy-item:disabled {
+  color: var(--kp-text-sub);
+  cursor: default;
+}
+
+.kp-mdcopy-item--confirm {
+  color: #fff;
+  background: var(--kp-primary);
+}
+
+.kp-mdcopy-item--confirm:hover:not(:disabled) {
+  background: var(--kp-primary-hover);
+}
+
+#kp-mdcopy-toast-container {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kp-mdcopy-toast {
+  min-width: 240px;
+  max-width: 360px;
+  padding: 10px 14px;
+  font-family: var(--kp-font);
+  font-size: 13px;
+  color: var(--kp-text);
+  background: var(--kp-bg);
+  border-left: 4px solid var(--kp-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: var(--kp-radius);
+}
+
+.kp-mdcopy-toast--error {
+  border-left-color: var(--kp-danger);
+}

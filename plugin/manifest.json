@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "version": 1,
+  "type": "APP",
+  "name": {
+    "en": "Markdown / TSV Copy",
+    "ja": "Markdown / TSV コピー"
+  },
+  "description": {
+    "en": "Copy a record or a list view to the clipboard as a Markdown table, a Markdown bullet list, or TSV.",
+    "ja": "レコードや一覧を Markdown 表・Markdown 箇条書き・TSV でクリップボードにコピーします。"
+  },
+  "icon": "icon.png",
+  "desktop": {
+    "js": ["js/desktop.js"],
+    "css": ["css/theme.css", "css/record.css"]
+  },
+  "mobile": {
+    "js": ["js/mobile.js"],
+    "css": ["css/theme.css", "css/record.css"]
+  },
+  "config": {
+    "html": "config.html",
+    "js": ["js/config.js"],
+    "css": ["css/theme.css", "css/config.css"],
+    "required_params": []
+  }
+}
