@@ -1,5 +1,7 @@
 # kintone-markdown-copy
 
+Documentation in Japanese: [README.ja.md](./README.ja.md)
+
 Copy a kintone record or a list view to the clipboard as a Markdown table, a
 Markdown bullet list, or TSV. Paste the result into Slack, Notion, GitHub, or a
 spreadsheet without reformatting each field by hand.
